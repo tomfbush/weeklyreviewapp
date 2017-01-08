@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module("myApp", []);
+
+app.controller('AppController',
+  [
+    '$scope',
+    function($scope) {
+
+      $scope.items = [
+        {id: 1, title: "Email inbox"},
+        {id: 2, title: "Review task list"},
+        {id: 3, title: "Calendar"},
+        {id: 4, title: "Birthdays and anniversaries"},
+        {id: 5, title: "Physical inbox"},
+        {id: 6, title: "Things that need posting"},
+        {id: 7, title: "Meal plans"},
+        {id: 8, title: "Clothes"},
+        {id: 9, title: "TV and films"},
+        {id: 10, title: "Exercise plans"},
+        {id: 11, title: "Budgeting"},
+        {id: 12, title: "Review finances"},
+        {id: 13, title: "Check messaging apps"},
+        {id: 14, title: "Empty bins"},
+        {id: 15, title: "Tidy working areas"}
+      ];
+      $scope.selectedItems = 0;
+
+      $scope.$watch('items', function(items){
+        var selectedItems = 0;
+        angular.forEach(items, function(item){
+          selectedItems += item.selected ? 1 : 0;
+        })
+        $scope.selectedItems = selectedItems;
+
+        $scope.percentSelected = 100*(selectedItems / items.length);
+      }, true);
+
+    }
+  ]
+);
+
+</script>
+</head>
+<body ng-controller="AppController" ng-app="myApp">
+		<div class="jumbotron text-center">
+			<h1>Weekly Review Checklist</h1>
+  			<p>Playing with Angular and Bootstrap!</p> 
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<p class="lead">Use this tool to make sure that every Sunday (or whenever) you are up to date with life and shizzle!</p>
+					<p>Completed: {{selectedItems}}/{{items.length}} </p>
+
+
+					
+<div class="progress">
+  						<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: {{ percentSelected }}%">
+    						<span class="sr-only">70% Complete</span>
+  						</div>
+  					</div>
+				</div>
+    			<div class="col-sm-8">
+					<div>
+					  <ul class="list-group row list-unstyled" id="task">
+					    <li class="list-group-item col-sm-4" ng-repeat="item in items">
+					    	<input type="checkbox" ng-model="item.selected" class="checkCentre"> <span ng-class="{completeStyle: item.selected}">{{ item.title }}</span>
+					    </li>
+					  </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</body>
+</html>

@@ -1,0 +1,21 @@
+ul#task {
+	/* SUPERCEDED BY BS CLASS DECLARATION ON THIS UL */
+	/*list-style: none;*/
+	}
+
+.checkCentre input {
+	vertical-align: center;
+}
+
+div.jumbotron {
+	background-color: #eef;
+}
+
+.completeStyle {
+	color: #ccc;
+	text-decoration: line-through;
+}
+
+.incompleteStyle {
+	background: yellow;
+}
