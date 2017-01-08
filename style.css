@@ -3,10 +3,6 @@ ul#task {
 	/*list-style: none;*/
 	}
 
-.checkCentre input {
-	vertical-align: center;
-}
-
 div.jumbotron {
 	background-color: #eef;
 }
