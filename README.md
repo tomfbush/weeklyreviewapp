@@ -17,3 +17,8 @@ There is a demo at http://www.tombush.co.uk/weekly-review-app/ if you want to ta
 
   * basic functionality to allow ticking of pre-defined boxes
   * progress bar that calculates % of items ticked
+
+### 0.2 [PLANNED]
+
+  * progress bar to detach and scroll with screen
+  * move completed items to bottom of list
