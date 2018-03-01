@@ -1,4 +1,4 @@
-# Weekly Review Checklist app
+# Weekly Review Checklist app
 
 ## Introduction
 
